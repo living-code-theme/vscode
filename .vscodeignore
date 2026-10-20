@@ -1,0 +1,8 @@
+.vscodeignore
+.github/**
+scripts/**
+node_modules/**
+dist/**
+port.json
+*.vsix
+.DS_Store

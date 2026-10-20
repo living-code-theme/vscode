@@ -1,0 +1,51 @@
+# Manual only. Publishes this repository's extension to the VS Code Marketplace and Open VSX.
+# First create the living-code-theme publisher at https://marketplace.visualstudio.com/manage
+# and the living-code-theme namespace at https://open-vsx.org, with publishing access for the token owners.
+# Use Living Code as the public display name.
+# VSCE_PAT: Azure DevOps token with Marketplace > Manage access for that publisher.
+# OVSX_PAT: Open VSX access token with publishing rights to that namespace.
+# Both registries use the publisher/name from package.json: living-code-theme.living-code.
+name: publish-vscode
+on:
+  workflow_dispatch:
+    inputs:
+      marketplace:
+        description: Publish to the VS Code Marketplace
+        type: boolean
+        default: true
+      open-vsx:
+        description: Publish to Open VSX
+        type: boolean
+        default: true
+permissions:
+  contents: read
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24 }
+      - uses: pnpm/action-setup@v4
+      - name: Package the extension
+        run: pnpm run package:vscode
+      - name: Publish to the VS Code Marketplace
+        if: inputs.marketplace
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+        run: |
+          if [ -z "$VSCE_PAT" ]; then
+            echo "::error::The VSCE_PAT secret is empty. Add an Azure DevOps token with the Marketplace > Manage scope as a repository secret named VSCE_PAT."
+            exit 1
+          fi
+          pnpm dlx @vscode/vsce publish --packagePath dist/*.vsix
+      - name: Publish to Open VSX
+        if: inputs.open-vsx
+        env:
+          OVSX_PAT: ${{ secrets.OVSX_PAT }}
+        run: |
+          if [ -z "$OVSX_PAT" ]; then
+            echo "::error::The OVSX_PAT secret is empty. Create an open-vsx.org access token and add it as a repository secret named OVSX_PAT."
+            exit 1
+          fi
+          pnpm dlx ovsx publish dist/*.vsix

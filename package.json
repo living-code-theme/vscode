@@ -1,0 +1,77 @@
+{
+  "name": "living-code",
+  "displayName": "Living Code",
+  "description": "Living Code theme for VS Code. Calm slate. Living color. Night, Frost, Paper and Signal color themes.",
+  "version": "0.1.1",
+  "publisher": "living-code-theme",
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#05080b",
+    "theme": "dark"
+  },
+  "homepage": "https://github.com/living-code-theme/vscode",
+  "bugs": {
+    "url": "https://github.com/living-code-theme/vscode/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/living-code-theme/vscode.git"
+  },
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "color-theme",
+    "dark",
+    "light",
+    "oklch",
+    "slate",
+    "teal",
+    "amber",
+    "minimal",
+    "living code night",
+    "living code frost",
+    "living code paper",
+    "living code signal"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Living Code Night",
+        "uiTheme": "vs-dark",
+        "path": "./themes/living-code-night-color-theme.json"
+      },
+      {
+        "label": "Living Code Frost",
+        "uiTheme": "vs-dark",
+        "path": "./themes/living-code-frost-color-theme.json"
+      },
+      {
+        "label": "Living Code Paper",
+        "uiTheme": "vs",
+        "path": "./themes/living-code-paper-color-theme.json"
+      },
+      {
+        "label": "Living Code Signal",
+        "uiTheme": "vs-dark",
+        "path": "./themes/living-code-signal-color-theme.json"
+      }
+    ]
+  },
+  "private": true,
+  "packageManager": "pnpm@12.9.0",
+  "livingCode": {
+    "kind": "vscode"
+  },
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "test": "node scripts/check.mjs",
+    "package": "node scripts/package.mjs",
+    "package:vscode": "node scripts/package.mjs"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://living-code.dev/port.schema.json",
+  "schemaVersion": 1,
+  "name": "VS Code",
+  "slug": "vscode",
+  "group": "Editors",
+  "emoji": "💻",
+  "description": "Living Code for VS Code. Repository-owned theme files, installation instructions and four color flavors.",
+  "homepage": "https://code.visualstudio.com",
+  "quick": "See installation instructions",
+  "aliases": [
+    "vscode"
+  ],
+  "flavors": [
+    "night",
+    "frost",
+    "paper",
+    "signal"
+  ],
+  "files": [
+    ".vscodeignore",
+    "CHANGELOG.md",
+    "OFL-JetBrainsMono.txt",
+    "images/icon.png",
+    "package.json",
+    "themes/living-code-frost-color-theme.json",
+    "themes/living-code-night-color-theme.json",
+    "themes/living-code-paper-color-theme.json",
+    "themes/living-code-signal-color-theme.json"
+  ],
+  "images": [
+    {
+      "flavor": "night",
+      "path": "images/night.png",
+      "alt": "VS Code running Living Code Night"
+    },
+    {
+      "flavor": "frost",
+      "path": "images/frost.png",
+      "alt": "VS Code running Living Code Frost"
+    },
+    {
+      "flavor": "paper",
+      "path": "images/paper.png",
+      "alt": "VS Code running Living Code Paper"
+    },
+    {
+      "flavor": "signal",
+      "path": "images/signal.png",
+      "alt": "VS Code running Living Code Signal"
+    }
+  ]
+}
