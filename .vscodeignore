@@ -1,6 +1,11 @@
 .vscodeignore
 .github/**
 scripts/**
+src/**
+palette/**
+test/**
+pnpm-lock.yaml
+CONTRIBUTING.md
 node_modules/**
 dist/**
 port.json
