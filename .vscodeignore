@@ -9,5 +9,6 @@ CONTRIBUTING.md
 node_modules/**
 dist/**
 port.json
+publication.json
 *.vsix
 .DS_Store

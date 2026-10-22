@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "artifacts": ["living-code-{version}.vsix"],
+  "channels": [
+    { "name": "VS Code Marketplace", "url": "https://marketplace.visualstudio.com/manage", "instructions": "Upload the VSIX under publisher living-code-theme (display name Living Code), or run this port's manual publish-vscode workflow. Confirm publisher access and the migration from elliotluque.living-code first; the new extension ID does not automatically replace old installs." },
+    { "name": "Open VSX", "url": "https://open-vsx.org/", "instructions": "Create/verify namespace living-code-theme and its token access. Publish the same VSIX with the port's manual workflow or ovsx publish <vsix>. No registry upload is performed by packaging." }
+  ]
+}
