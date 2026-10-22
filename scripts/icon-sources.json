@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "icons": [
+    {
+      "source": "images/icon.svg",
+      "sha256": "8738e0939dcd6136117f7db35bb0ae5a1f8459c1dc11ac36f2149d41e516f250",
+      "outputs": [
+        {
+          "path": "images/icon.png",
+          "size": 128,
+          "sha256": "a498d716d9b78194863fbebd19b6a56e6c66823df26565ade8be232a3f6ea275"
+        }
+      ]
+    }
+  ]
+}

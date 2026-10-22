@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.2
+
+- Replace the retired personal `[el]` icon with the Living Code `[lc]` brand mark.
+- Validate the outlined SVG and rendered icon during checks and packaging to prevent stale branding.
+
 ## Unreleased
 
 - Every port now follows one role contract, checked in CI by highlighting real code with real grammars. Fixes it found:

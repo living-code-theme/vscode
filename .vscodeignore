@@ -10,5 +10,6 @@ node_modules/**
 dist/**
 port.json
 publication.json
+images/icon.svg
 *.vsix
 .DS_Store
