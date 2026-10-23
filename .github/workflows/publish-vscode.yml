@@ -24,9 +24,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with: { node-version: 24 }
       - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+      # vsce and ovsx come from the lockfile (exact versions + integrity hashes), never from a floating `dlx`,
+      # so a compromised upstream release cannot run while the marketplace tokens are in the environment.
+      - name: Install locked publishing tools
+        run: pnpm install --frozen-lockfile --ignore-scripts
       - name: Package the extension
         run: pnpm run package:vscode
       - name: Publish to the VS Code Marketplace
@@ -38,7 +44,7 @@ jobs:
             echo "::error::The VSCE_PAT secret is empty. Add an Azure DevOps token with the Marketplace > Manage scope as a repository secret named VSCE_PAT."
             exit 1
           fi
-          pnpm dlx @vscode/vsce publish --packagePath dist/*.vsix
+          pnpm exec vsce publish --packagePath dist/*.vsix
       - name: Publish to Open VSX
         if: inputs.open-vsx
         env:
@@ -48,4 +54,4 @@ jobs:
             echo "::error::The OVSX_PAT secret is empty. Create an open-vsx.org access token and add it as a repository secret named OVSX_PAT."
             exit 1
           fi
-          pnpm dlx ovsx publish dist/*.vsix
+          pnpm exec ovsx publish dist/*.vsix

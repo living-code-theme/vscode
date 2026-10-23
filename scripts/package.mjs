@@ -18,7 +18,7 @@ const kind = pkg.livingCode.kind;
 if (kind === "npm") {
   run(process.platform === "win32" ? "npm.cmd" : "npm", ["pack", "--pack-destination", out]);
 } else if (kind === "vscode") {
-  run(process.platform === "win32" ? "pnpm.cmd" : "pnpm", ["dlx", "@vscode/vsce@4.0.0", "package", "--no-dependencies", "--out", join(out, `living-code-${pkg.version}.vsix`)]);
+  run(process.platform === "win32" ? "pnpm.cmd" : "pnpm", ["exec", "vsce", "package", "--no-dependencies", "--out", join(out, `living-code-${pkg.version}.vsix`)]);
 } else if (kind === "jetbrains") {
   const files = await payload(manifest.files.filter((path) => /^(META-INF|themes)\//.test(path)));
   const jar = zip([{ path: "META-INF/MANIFEST.MF", content: "Manifest-Version: 1.0\r\n\r\n" }, { path: "META-INF/LICENSE", content: await read("LICENSE") }, { path: "META-INF/OFL-JetBrainsMono.txt", content: await read("OFL-JetBrainsMono.txt") }, ...files]);
