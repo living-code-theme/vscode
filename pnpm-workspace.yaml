@@ -1,0 +1,4 @@
+# @vscode/vsce-sign (a vsce dependency) only fetches a native signing binary in its postinstall.
+# Living Code never signs packages, so the script is explicitly denied rather than approved.
+allowBuilds:
+  "@vscode/vsce-sign": false

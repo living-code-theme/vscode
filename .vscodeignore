@@ -5,6 +5,7 @@ src/**
 palette/**
 test/**
 pnpm-lock.yaml
+pnpm-workspace.yaml
 CONTRIBUTING.md
 node_modules/**
 dist/**
