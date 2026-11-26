@@ -47,13 +47,13 @@ Select any preview to view the image at full size.
 
 ## Installation
 
-When listed, search **Living Code** under publisher **living-code-theme** in the VS Code Marketplace or Open VSX, install it, then run *Preferences: Color Theme → Living Code Night*. The extension ID is `living-code-theme.living-code`.
+When listed, search **Living Code** under publisher **living-code-theme** in the VS Code Marketplace or Open VSX, install it, then run *Preferences: Color Theme → Living Code Night*. The extension ID is `living-code-theme.living-code-theme`.
 
-**Without a marketplace:** download `living-code-0.1.1.vsix` from the [latest GitHub release](https://github.com/living-code-theme/vscode/releases/latest), or build it from a checkout:
+**Without a marketplace:** download `living-code-theme-0.1.2.vsix` from the [latest GitHub release](https://github.com/living-code-theme/vscode/releases/latest), or build it from a checkout:
 
 ```sh
 node scripts/package.mjs
-code --install-extension dist/living-code-0.1.1.vsix
+code --install-extension dist/living-code-theme-0.1.2.vsix
 ```
 
 Choose another Living Code flavor with the color-theme picker.
@@ -104,7 +104,7 @@ The extension supplies color themes, not fonts or editor settings. Keep your exi
 
 ## Compatibility
 
-Supports the `engines.vscode` compatibility range in package.json and all four Living Code themes. The same VSIX can be used in compatible VS Code forks. Marketplace updates use the extension ID `living-code-theme.living-code`; installations from another publisher do not switch automatically.
+Supports the `engines.vscode` compatibility range in package.json and all four Living Code themes. The same VSIX can be used in compatible VS Code forks. Marketplace updates use the extension ID `living-code-theme.living-code-theme`; installations from another publisher do not switch automatically.
 
 ## Contributing
 

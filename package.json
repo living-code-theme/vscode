@@ -1,6 +1,6 @@
 {
-  "name": "living-code",
-  "displayName": "Living Code",
+  "name": "living-code-theme",
+  "displayName": "Living Code for VS Code",
   "description": "Living Code theme for VS Code. Calm slate. Living color. Night, Frost, Paper and Signal color themes.",
   "version": "0.1.2",
   "publisher": "living-code-theme",
@@ -25,19 +25,15 @@
     "Themes"
   ],
   "keywords": [
+    "living-code",
     "theme",
+    "colorscheme",
     "color-theme",
+    "editor",
+    "ui",
+    "syntax-highlighting",
     "dark",
-    "light",
-    "oklch",
-    "slate",
-    "teal",
-    "amber",
-    "minimal",
-    "living code night",
-    "living code frost",
-    "living code paper",
-    "living code signal"
+    "light"
   ],
   "contributes": {
     "themes": [

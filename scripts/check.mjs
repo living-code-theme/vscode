@@ -63,7 +63,7 @@ export async function check(directory = root) {
   assert.deepEqual([...readme.matchAll(/<details\s+data-lc-flavor="([a-z]+)"/g)].map((match) => match[1]), order.filter((id) => manifest.flavors.includes(id)));
   for (const image of manifest.images) assert.ok(readme.split(`src="${image.path}"`).length >= 3, `README must include comparison and flavor capture: ${image.path}`);
   if (pkg.livingCode.kind === "vscode") {
-    assert.equal(`${pkg.publisher}.${pkg.name}`, "living-code-theme.living-code", "Keep the VS Code Marketplace and Open VSX identity under Living Code");
+    assert.equal(`${pkg.publisher}.${pkg.name}`, "living-code-theme.living-code-theme", "Keep the VS Code Marketplace and Open VSX identity under Living Code");
   }
   if (pkg.contributes?.themes) {
     for (const theme of pkg.contributes.themes) await read(theme.path.replace(/^\.\//, ""));
